@@ -1,0 +1,46 @@
+entity InsuranceForm {
+  policiesCategory  Integer required
+  firstName String required
+  middleName String required
+  lastName String required
+  address String required
+  city String required
+  pincode Integer required
+  phoneNumber Integer required
+  emailId  String required
+  applicationGenKey  Integer required
+}
+
+entity PolicyInformation {
+  policyNewOrExisting Boolean required
+  policyNoExisting String
+  insuranceCompanyExisting Integer
+  dateOfExpireExisting Instant
+  idv String
+  ncb String
+  valueOfVichle Long
+  purchaseDate Instant
+  vichleManufComp String
+  policyTPA String
+  policyInfoGenKey  Integer required
+}
+
+entity Document {
+  title String required
+  size Long required
+  mimeType String
+}
+entity Content {
+  data Blob required
+}
+
+relationship OneToOne {
+  Document{content} to Content{document(id) required}
+}
+
+relationship OneToMany {
+  InsuranceForm{document} to Document{InsuranceForm(applicationGenKey) required}
+}
+relationship OneToOne {
+  InsuranceForm{policyInfoGenKey} to PolicyInformation{InsuranceForm(applicationGenKey) required}
+}

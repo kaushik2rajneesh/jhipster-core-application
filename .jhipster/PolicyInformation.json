@@ -1,0 +1,75 @@
+{
+    "name": "PolicyInformation",
+    "fields": [
+        {
+            "fieldName": "policyNewOrExisting",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "policyNoExisting",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "insuranceCompanyExisting",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dateOfExpireExisting",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "idv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ncb",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valueOfVichle",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "purchaseDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "vichleManufComp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "policyTPA",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "policyInfoGenKey",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "insuranceForm",
+            "otherEntityRelationshipName": "policyInfoGenKey",
+            "relationshipValidateRules": "required",
+            "relationshipName": "insuranceForm",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190520074842",
+    "entityTableName": "policy_information",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "jhipsterCoreApplication",
+    "applications": "*",
+    "microserviceName": "jhipsterCoreApplication"
+}
